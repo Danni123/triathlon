@@ -1,9 +1,5 @@
- <!-- FlatFy Theme - Andrea Galanti /-->
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+
 <!--[if gt IE 9]><!--> <html> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
@@ -21,7 +17,6 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 	
-	
     <!-- Custom CSS-->
     <link href="css/general.css" rel="stylesheet">
 	
@@ -35,10 +30,27 @@
 	<!-- Magnific Popup core CSS file -->
 	<link rel="stylesheet" href="css/magnific-popup.css"> 
 
+	<!-- colorselector css and js files -->
+  	<link rel="stylesheet" href="css/jquery.simplecolorpicker.css">
+
+  	<script src="js/ajax.googleapis.js"></script>
+	<script src="js/jquery.simplecolorpicker.js"></script>
 	
+	<script>
+		$(document).ready(function() {
+  			$('#init').on('click', function() {
+    			$('select[name="colorpicker-shortlist"]').simplecolorpicker();
+    			$('select[name="colorpicker-picker-shortlist"]').simplecolorpicker({picker: true});
+  					});
+  				$('#destroy').on('click', function() {
+   				$('select').simplecolorpicker('destroy');
+ 					 });
+  				$('#init').trigger('click');
+					});
+				});
+	</script>
 	
 	<script src="js/modernizr-2.6.2.min.js"></script>  <!-- Modernizr /-->
-	
 </head>
 
 <body id="home">
@@ -78,7 +90,6 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#home">ToRI</a>
 			</div>
 
 			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
@@ -108,7 +119,7 @@
 				<div class="col-sm-4 wow fadeInDown text-center">
 				  <img class="rotate" src="img/icon/tweet.svg" alt="Generic placeholder image">
 				  <h3> <a href="#maths">Maths</a></h3> 
-				  <p class="lead">Bet on the right team and become a math world champion.</p>
+				  <p class="lead">Bet on the right math expert and win!</p>
 
 				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
 				</div><!-- /.col-lg-4 -->
@@ -116,14 +127,14 @@
 				<div class="col-sm-4 wow fadeInDown text-center">
 				  <img  class="rotate" src="img/icon/picture.svg" alt="Generic placeholder image" href="#screen">
 				   <h3> <a href="#running">Running</a></h3>
-				   <p class="lead">Choose the running team that might win and become a champion! </p>
+				   <p class="lead">Choose the runner that wins and become the champion! </p>
 				   <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
 				</div><!-- /.col-lg-4 -->
 				
 				<div class="col-sm-4 wow fadeInDown text-center">
 				  <img  class="rotate" src="img/icon/retina.svg" alt="Generic placeholder image" href="#credits">
 				   <h3> <a href="#riding">Horse Riding</a></h3>
-					<p class="lead">Which team wins the horse riding competition? It's your choice! </p>
+					<p class="lead">Who do you think will come out as the victor in a horse race? It's your choice! </p>
 				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
 				</div><!-- /.col-lg-4 -->
 				
@@ -149,18 +160,21 @@
 					<img class="rotate" src="img/icon/tweet.svg" alt="Generic placeholder image">
 					<br></br>
 					<br></br>
-					<div class="sub-title lead3">Select your Team:</div
-						<select name="colorpicker-shortlist">
-						<option style="background-color: white">select</option>
-						<option style="background-color: white">white</option>
-						<option style="background-color: yellow">yellow</option>
-						<option style="background-color: green">green</option>
-						<option style="background-color: blue">blue</option>
-						<option style="background-color: black">black</option>
+								<div class="sub-title lead3">Select your Maths expert:</div>
+						<link id="init">
+						<form>
+						<select id="url3" name="url3">
+						<option selected="selected" value="#">select colour</option>
+						<option value="maths/mathswhite.html">white</option>
+						<option value="maths/mathsblack.html">black</option>
+						<option value="maths/mathsyellow.html">yellow</option>
+						<option value="maths/mathsgreen.html">green</option>
+						<option value="maths/mathsblue.html">blue</option>
 					</select>
 					<br></br>
-						<p><a class="btn btn-embossed btn-primary" href="#" role="button">Play</a> 
+						<p><a class="btn btn-embossed btn-primary" target="_self" input type="submit"  role="button" onclick="window.open(url3.value, '_self');"  />Play</</a> 
 					 	<a class="btn btn-embossed btn-info" href="#instructions" role="button">View Instructions</a></p>
+					 	</form>
 					<br></br>
 					<br></br>
                 </div>
@@ -168,9 +182,9 @@
                 <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
                     
                     <h3 class="section-heading">Maths</h3>
-					<div class="sub-title lead3">Math training keeps your brain in shape. Are you ready?<br>Then let's choose your favourite Team:</div>
+					<div class="sub-title lead3">Math training keeps your brain in shape. Are you ready?<br>Then let's choose your favourite colour Maths expert:</div>
                     <p class="lead">
-						Choose your team by selecting the team (colour) that you are willing to compete with. After you have chosen the team, click on the PLAY button to start the game!
+						Choose your maths expert by selecting the colour that you will be competing with. After you have chosen, click on the PLAY button to start the game!
 					</p>
 				</div>   
             </div>
@@ -186,18 +200,21 @@
 					<img class="rotate" src="img/icon/picture.svg" alt="Generic placeholder image">
 					<br></br>
 					<br></br>
-					<div class="sub-title lead3">Select your Team:</div>
-					<select name="colorpicker-shortlist">
-						<option style="background-color: white">select</option>
-						<option style="background-color: white">white</option>
-						<option style="background-color: yellow">yellow</option>
-						<option style="background-color: green">green</option>
-						<option style="background-color: blue">blue</option>
-						<option style="background-color: black">black</option>
+					<div class="sub-title lead3">Select your Runner:</div>
+						<link id="init">
+						<form>
+						<select id="url2" name="url2">
+						<option selected="selected" value="#">select colour</option>
+						<option value="running/runningblue.html">blue</option>
+						<option value="running/runningyellow.html">yellow</option>
+						<option value="running/runninggreen.html">green</option>
+						<option value="running/runningblack.html">black</option>
+						<option value="running/runningwhite.html">white</option>
 					</select>
 					<br></br>
-						<p><a class="btn btn-embossed btn-primary" href="#" role="button">Play</a> 
+						<p><a class="btn btn-embossed btn-primary" target="_self" input type="submit"  role="button" onclick="window.open(url2.value, '_self');"  />Play</</a> 
 					 	<a class="btn btn-embossed btn-info" href="#instructions" role="button">View Instructions</a></p>
+					 	</form>
 					<br></br>
 					<br></br>
                 </div>
@@ -205,9 +222,9 @@
                 <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
                     
                     <h3 class="section-heading">Running</h3>
-					<div class="sub-title lead3">Which team can run the fastest?<br>Make your bet now!</div>
+					<div class="sub-title lead3">Which will run the fastest?<br>Make your bet now!</div>
                     <p class="lead">
-						Choose your team by selecting the team (colour) that you are willing to compete with. After you have chosen the team, click on the PLAY button to start the game!
+						Choose your colour for the runner you are going to be competing with. After you have chosen the colour, click on the PLAY button to start the game!
 					</p>
 				</div>   
             </div>
@@ -223,18 +240,20 @@
 					<img class="rotate" src="img/icon/retina.svg" alt="Generic placeholder image">
 					<br></br>
 					<br></br>
-					<div class="sub-title lead3">Select your Team:</div>
-					<select name="colorpicker-shortlist">
-						<option style="background-color: white">select</option>
-						<option style="background-color: white">white</option>
-						<option style="background-color: yellow">yellow</option>
-						<option style="background-color: green">green</option>
-						<option style="background-color: blue">blue</option>
-						<option style="background-color: black">black</option>
+					<div class="sub-title lead3">Select your Rider:</div>
+						<link id="init">
+						<form>
+						<select id="url" name="url">
+						<option selected="selected" value="#">select colour</option>
+						<option value="riding/horsegreen.html">green</option>
+						<option value="riding/horsewhite.html">white</option>
+						<option value="riding/horseblack.html">black</option>
+						<option value="riding/horseblue.html">blue</option>
+						<option value="riding/horseyellow.html">yellow</option>
 					</select>
 					<br></br>
-						<p><a class="btn btn-embossed btn-primary" href="#" role="button">Play</a> 
-					 	<a class="btn btn-embossed btn-info" href="#instructions" role="button">View Instructions</a></p>
+						<p><a class="btn btn-embossed btn-primary" target="_self" input type="submit"  role="button" onclick="window.open(url.value, '_self');"  />Play</</a> 
+					 	<a class="btn btn-embossed btn-info" href="#instructions" role="button">View Instructions</a></p></form>
 					<br></br>
 					<br></br>
                 </div>
@@ -244,66 +263,12 @@
                     <h3 class="section-heading">Horse Riding</h3>
 					<div class="sub-title lead3">Who will become world champion in horse riding?<br>Make your bet now!</div>
                     <p class="lead">
-						Choose your team by selecting the team (colour) that you are willing to compete with. After you have chosen the team, click on the PLAY button to start the game!
+						Choose your horse rider you will be competing with. After you have chosen a colour for your rider, click on the PLAY button to start the game!
 					</p>
 				</div>   
             </div>
         </div>
 
-	<!-- Bet and Win -->
-		<div  class="content-section-b ">
-        <div class="container">
-          <div class="row" >
-			 <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
-				<h2>Bet and Win</h2>
-				<p class="lead" style="margin-top:0">Choose your favourite discipline, bet on a team and become a champion.</p>
-			 </div>
-		  </div>
-		    <div class="row wow bounceInUp" >
-              <div id="owl-demo" class="owl-carousel">
-				
-				<a href="img/slide/1.png" class="image-link">
-					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/1.png" alt="Owl Image">
-					</div>
-				</a>
-				
-               <a href="img/slide/2.png" class="image-link">
-					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/2.png" alt="Owl Image">
-					</div>
-				</a>
-				
-				<a href="img/slide/3.png" class="image-link">
-					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/3.png" alt="Owl Image">
-					</div>
-				</a>
-				
-				<a href="img/slide/1.png" class="image-link">
-					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/1.png" alt="Owl Image">
-					</div>
-				</a>
-				
-               <a href="img/slide/2.png" class="image-link">
-					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/2.png" alt="Owl Image">
-					</div>
-				</a>
-				
-				<a href="img/slide/3.png" class="image-link">
-					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/3.png" alt="Owl Image">
-					</div>
-				</a>
-              </div>       
-          </div>
-        </div>
-
-
-	</div>	
-	
 	<!-- Instructions -->
 	<div id="instructions" class="content-section-b">
 		<div class="container">
